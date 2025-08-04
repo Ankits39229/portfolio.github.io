@@ -63,131 +63,144 @@ export default function CybersecurityPage() {
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 group border border-red-500/20"
-            >
-              {/* Project Image */}
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={project.imageUrl || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute top-4 left-4 flex gap-2">
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(project.status)}`}
-                  >
-                    {project.status}
-                  </span>
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${getDifficultyColor(project.difficulty)}`}
-                  >
-                    {project.difficulty}
-                  </span>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <Shield className="text-red-400" size={24} />
-                </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-2xl font-bold group-hover:text-red-400 transition-colors">{project.title}</h3>
-                  <div className="flex gap-2">
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
-                      >
-                        <Github size={18} />
-                      </a>
-                    )}
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
-                      >
-                        <ExternalLink size={18} />
-                      </a>
-                    )}
+        {/* Project Highlights Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-8"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
+              Featured Cybersecurity Projects
+            </h2>
+            <p className="text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+              Advanced security tools, penetration testing frameworks, and vulnerability assessment solutions.
+            </p>
+          </div>
+          
+          <div className="space-y-12">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.8 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-red-900/20 to-orange-900/10 backdrop-blur-lg rounded-3xl p-8 border border-red-500/30 hover:border-red-400/50 transition-all duration-500 group"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  {/* Project Info */}
+                  <div className={index % 2 === 1 ? "lg:order-2" : ""}>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="flex items-center gap-3">
+                        <span className="text-3xl font-bold text-red-400/60">0{index + 1}</span>
+                        <div className="w-12 h-0.5 bg-gradient-to-r from-red-400 to-transparent"></div>
+                      </div>
+                      <span className={`px-4 py-2 rounded-full text-sm font-medium border ${getStatusColor(project.status)}`}>
+                        {project.status}
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-3xl font-bold mb-4 group-hover:text-red-400 transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-neutral-300 mb-6 leading-relaxed text-lg">
+                      {project.longDescription || project.description}
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      <div>
+                        <h4 className="font-bold mb-4 text-red-400 flex items-center gap-2">
+                          <Shield size={18} />
+                          Security Features
+                        </h4>
+                        <ul className="text-neutral-300 space-y-3">
+                          {project.features.slice(0, 4).map((feature, idx) => (
+                            <li key={idx} className="flex items-start gap-3 group/item">
+                              <div className="w-2 h-2 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                              <span className="group-hover/item:text-white transition-colors duration-300">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-bold mb-4 text-red-400 flex items-center gap-2">
+                          <Clock size={18} />
+                          Security Stack
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech, idx) => (
+                            <span 
+                              key={tech} 
+                              className="px-3 py-2 bg-gradient-to-r from-red-500/20 to-orange-500/20 text-red-300 rounded-xl text-sm font-medium border border-red-500/30 hover:border-red-400/50 hover:from-red-500/30 hover:to-orange-500/30 transition-all duration-300 cursor-default"
+                              style={{ animationDelay: `${idx * 0.1}s` }}
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        
+                        <div className="mt-4 text-sm text-neutral-400">
+                          <span className="inline-flex items-center gap-2">
+                            <Clock size={14} />
+                            {project.duration}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Action Buttons */}
+                    <div className="flex gap-4">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
+                        >
+                          <Github size={18} />
+                          View Code
+                        </a>
+                      )}
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 border border-white/20 hover:border-white/40"
+                        >
+                          <ExternalLink size={18} />
+                          Live Demo
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {/* Project Image */}
+                  <div className={`relative ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                    <div className="relative h-80 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                      <Image
+                        src={project.imageUrl || "/placeholder.svg"}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-red-400/20 to-orange-400/20 rounded-full backdrop-blur-sm border border-red-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                      <Shield className="text-red-400" size={24} />
+                    </div>
                   </div>
                 </div>
-
-                <p className="text-neutral-300 mb-4 leading-relaxed">{project.description}</p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="px-2 py-1 bg-red-500/20 text-red-400 rounded-full text-xs">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Project Stats */}
-                <div className="flex items-center gap-4 text-sm text-neutral-400 mb-4">
-                  <span className="flex items-center gap-1">
-                    <Clock size={14} />
-                    {project.duration}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Star size={14} />
-                    {project.features.length} Features
-                  </span>
-                </div>
-
-                {/* Key Features */}
-                <div className="mb-4">
-                  <h4 className="font-semibold mb-2 text-sm text-neutral-300">Security Features:</h4>
-                  <ul className="text-sm text-neutral-400 space-y-1">
-                    {project.features.slice(0, 3).map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2">
-                        <div className="w-1 h-1 bg-red-400 rounded-full" />
-                        {feature}
-                      </li>
-                    ))}
-                    {project.features.length > 3 && (
-                      <li className="text-red-400 text-xs">+{project.features.length - 3} more features</li>
-                    )}
-                  </ul>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <TransitionLink href={`/portfolio/cybersecurity/${project.id}`}>
-                    <button className="flex-1 bg-white/10 hover:bg-white/20 text-white font-medium py-2 px-4 rounded-lg transition-colors">
-                      View Details
-                    </button>
-                  </TransitionLink>
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition-colors"
-                    >
-                      View Code
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Security Focus Banner */}
         <motion.div
