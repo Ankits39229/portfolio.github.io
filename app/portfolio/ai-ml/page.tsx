@@ -55,10 +55,10 @@ export default function AiMlPage() {
 
           <div className="flex items-center gap-4 mb-6">
             <Brain className="text-purple-400" size={48} />
-            <h1 className="text-5xl md:text-7xl font-bold">AI & Machine Learning</h1>
+            <h1 className="text-5xl md:text-7xl font-bold">Linux Development</h1>
           </div>
           <p className="text-xl text-neutral-300 max-w-3xl">
-            Intelligent systems, machine learning models, and AI-powered applications that solve real-world problems.
+            Building robust and scalable Linux distributions, leveraging open-source technologies and tools.
           </p>
         </motion.div>
 
@@ -72,10 +72,10 @@ export default function AiMlPage() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
-              Featured AI & Machine Learning Projects
+              Featured Distros
             </h2>
             <p className="text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-              Cutting-edge artificial intelligence solutions leveraging deep learning, neural networks, and advanced algorithms.
+              Cutting-edge Linux distributions leveraging open-source technologies and tools.
             </p>
           </div>
           
@@ -211,136 +211,16 @@ export default function AiMlPage() {
         >
           <div className="text-center">
             <Brain className="mx-auto text-purple-400 mb-4" size={48} />
-            <h2 className="text-3xl font-bold mb-4">Artificial Intelligence & Machine Learning</h2>
+            <h2 className="text-3xl font-bold mb-4">Linux distributions Development</h2>
             <p className="text-neutral-300 max-w-2xl mx-auto">
-              Exploring the frontiers of AI and ML to create intelligent solutions that learn, adapt, and solve complex
-              problems. From natural language processing to computer vision, these projects showcase the power of
-              artificial intelligence.
+              Exploring the frontiers of Linux distributions development through innovative projects to create
+              robust and scalable Linux distributions.
             </p>
           </div>
         </motion.div>
 
         {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
-          <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-purple-500/20">
-            <div className="text-3xl font-bold text-purple-400 mb-2">{projects.length}</div>
-            <div className="text-neutral-300">AI Projects</div>
-          </div>
-          <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-green-500/20">
-            <div className="text-3xl font-bold text-green-400 mb-2">
-              {projects.filter((p) => p.status === "Completed").length}
-            </div>
-            <div className="text-neutral-300">Models Deployed</div>
-          </div>
-          <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-yellow-500/20">
-            <div className="text-3xl font-bold text-yellow-400 mb-2">
-              {projects.filter((p) => p.difficulty === "Advanced").length}
-            </div>
-            <div className="text-neutral-300">Advanced ML</div>
-          </div>
-        </motion.div>
-
-        {/* AI/ML Project Details Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="mt-16 bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30"
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
-              Artificial Intelligence & Machine Learning Projects
-            </h2>
-            <p className="text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-              Exploring the frontiers of AI and machine learning through innovative projects that solve real-world problems 
-              using cutting-edge algorithms, neural networks, and intelligent systems.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* AI Capabilities */}
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform border border-purple-500/30">
-                <Brain className="text-purple-400" size={32} />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-purple-400">Neural Networks</h3>
-              <p className="text-neutral-300 text-sm leading-relaxed">
-                Deep learning architectures including CNNs, RNNs, and Transformers for complex pattern recognition and prediction tasks.
-              </p>
-            </div>
-
-            {/* Machine Learning */}
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform border border-blue-500/30">
-                <Sparkles className="text-blue-400" size={32} />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-blue-400">Machine Learning</h3>
-              <p className="text-neutral-300 text-sm leading-relaxed">
-                Advanced ML algorithms including ensemble methods, clustering, classification, and regression for intelligent data analysis.
-              </p>
-            </div>
-
-            {/* Computer Vision */}
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform border border-indigo-500/30">
-                <Zap className="text-indigo-400" size={32} />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-indigo-400">Computer Vision</h3>
-              <p className="text-neutral-300 text-sm leading-relaxed">
-                Image processing, object detection, facial recognition, and automated visual analysis using OpenCV and TensorFlow.
-              </p>
-            </div>
-          </div>
-
-          {/* AI Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            <div className="bg-white/5 rounded-xl p-6 border border-purple-500/20">
-              <h4 className="text-lg font-bold mb-4 text-purple-400 flex items-center gap-2">
-                <Brain size={20} />
-                AI/ML Technologies
-              </h4>
-              <div className="grid grid-cols-2 gap-3">
-                <span className="text-sm text-neutral-300 bg-purple-500/10 px-3 py-1 rounded-md">TensorFlow</span>
-                <span className="text-sm text-neutral-300 bg-purple-500/10 px-3 py-1 rounded-md">PyTorch</span>
-                <span className="text-sm text-neutral-300 bg-purple-500/10 px-3 py-1 rounded-md">Scikit-learn</span>
-                <span className="text-sm text-neutral-300 bg-purple-500/10 px-3 py-1 rounded-md">OpenCV</span>
-                <span className="text-sm text-neutral-300 bg-purple-500/10 px-3 py-1 rounded-md">Pandas</span>
-                <span className="text-sm text-neutral-300 bg-purple-500/10 px-3 py-1 rounded-md">NumPy</span>
-              </div>
-            </div>
-
-            <div className="bg-white/5 rounded-xl p-6 border border-blue-500/20">
-              <h4 className="text-lg font-bold mb-4 text-blue-400 flex items-center gap-2">
-                <Sparkles size={20} />
-                Key AI Applications
-              </h4>
-              <ul className="space-y-2">
-                <li className="text-sm text-neutral-300 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  Predictive Analytics & Forecasting
-                </li>
-                <li className="text-sm text-neutral-300 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  Natural Language Processing
-                </li>
-                <li className="text-sm text-neutral-300 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  Computer Vision & Image Recognition
-                </li>
-                <li className="text-sm text-neutral-300 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  Automated Decision Systems
-                </li>
-              </ul>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </div>
   )

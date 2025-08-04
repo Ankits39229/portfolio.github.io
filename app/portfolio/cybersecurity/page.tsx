@@ -55,11 +55,10 @@ export default function CybersecurityPage() {
 
           <div className="flex items-center gap-4 mb-6">
             <Shield className="text-red-400" size={48} />
-            <h1 className="text-5xl md:text-7xl font-bold">Cybersecurity</h1>
+            <h1 className="text-5xl md:text-7xl font-bold">Application Development</h1>
           </div>
           <p className="text-xl text-neutral-300 max-w-3xl">
-            Security tools, penetration testing frameworks, and vulnerability assessment projects focused on protecting
-            digital assets.
+            Security tools, Utility applications, and vulnerability assessment projects focused on protecting digital assets.
           </p>
         </motion.div>
 
@@ -73,10 +72,10 @@ export default function CybersecurityPage() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
-              Featured Cybersecurity Projects
+              Featured Application Development Projects
             </h2>
             <p className="text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-              Advanced security tools, penetration testing frameworks, and vulnerability assessment solutions.
+              Advanced security tools, utility applications.
             </p>
           </div>
           
@@ -212,10 +211,10 @@ export default function CybersecurityPage() {
         >
           <div className="text-center">
             <Shield className="mx-auto text-red-400 mb-4" size={48} />
-            <h2 className="text-3xl font-bold mb-4">Ethical Security Research</h2>
+            <h2 className="text-3xl font-bold mb-4">Application Development</h2>
             <p className="text-neutral-300 max-w-2xl mx-auto">
-              All cybersecurity projects are developed for educational purposes and ethical security research. These
-              tools are designed to help organizations identify and fix vulnerabilities in their systems.
+              All application development projects are developed for educational purposes and ethical security research. These
+              tools are designed to help organizations identify and fix their systems.
             </p>
           </div>
         </motion.div>

@@ -62,7 +62,7 @@ const technicalSkills = [
     name: "React.js/Next.js",
     category: "Frontend",
     icon: "⚛️",
-    experience: "1.5+ years",
+    experience: "1+ years",
     projects: 7,
     status: "Expert",
   },
@@ -86,9 +86,9 @@ const technicalSkills = [
     name: "Express.js",
     category: "Backend",
     icon: "🚀",
-    experience: "1+ year",
-    projects: 4,
-    status: "Advanced",
+    experience: "0.5+ years",
+    projects: 3,
+    status: "Intermediate",
   },
   {
     name: "MongoDB",
@@ -102,6 +102,12 @@ const technicalSkills = [
     name: "MySQL",
     category: "Database",
     icon: "🐬",
+    experience: "1+ year",
+    projects: 6,
+    status: "Advanced",
+  },
+  {
+    name: "MySQL",
     experience: "1.5+ years",
     projects: 5,
     status: "Advanced",
@@ -118,7 +124,7 @@ const technicalSkills = [
     name: "Linux",
     category: "Tools",
     icon: "🐧",
-    experience: "1+ year",
+    experience: "3+ year",
     projects: 3,
     status: "Intermediate",
   },
@@ -128,11 +134,11 @@ const ides = [
   { name: "VS Code", icon: "💻", description: "Primary code editor with extensions", proficiency: "Expert" },
   { name: "IntelliJ IDEA", icon: "🧠", description: "Java development environment", proficiency: "Advanced" },
   { name: "PyCharm", icon: "🐍", description: "Python development IDE", proficiency: "Advanced" },
-  { name: "Eclipse", icon: "🌙", description: "Java enterprise development", proficiency: "Intermediate" },
+  { name: "WebStorm", icon: "🌙", description: "JavaScript development environment", proficiency: "Intermediate" },
   { name: "Android Studio", icon: "📱", description: "Android app development", proficiency: "Intermediate" },
   { name: "Sublime Text", icon: "✨", description: "Lightweight text editor", proficiency: "Advanced" },
   { name: "Vim/Neovim", icon: "⚡", description: "Terminal-based editor", proficiency: "Intermediate" },
-  { name: "Code::Blocks", icon: "🔷", description: "C/C++ development", proficiency: "Intermediate" },
+  { name: "Code::Blocks", icon: "🔷", description: "C/C++ development", proficiency: "Beginner" },
 ]
 
 const securityTools = [
@@ -151,18 +157,11 @@ const securityTools = [
 ]
 
 const developmentTools = [
-  { name: "Docker", icon: "🐳", description: "Containerization platform", category: "DevOps" },
   { name: "AWS", icon: "☁️", description: "Cloud computing services", category: "Cloud" },
-  { name: "Firebase", icon: "🔥", description: "Backend-as-a-Service platform", category: "Backend" },
-  { name: "GraphQL", icon: "📊", description: "Query language for APIs", category: "API" },
-  { name: "Redis", icon: "🔴", description: "In-memory data structure store", category: "Database" },
   { name: "Tailwind CSS", icon: "🎨", description: "Utility-first CSS framework", category: "Frontend" },
-  { name: "Socket.io", icon: "🔌", description: "Real-time communication", category: "Backend" },
   { name: "Jest", icon: "🧪", description: "JavaScript testing framework", category: "Testing" },
   { name: "Webpack", icon: "📦", description: "Module bundler", category: "Build Tools" },
   { name: "Figma", icon: "🎯", description: "UI/UX design tool", category: "Design" },
-  { name: "Postman", icon: "📮", description: "API development environment", category: "API" },
-  { name: "Kubernetes", icon: "⚙️", description: "Container orchestration", category: "DevOps" },
 ]
 
 const aiTools = [
@@ -177,18 +176,7 @@ const aiTools = [
 ]
 
 const hackathons = [
-  {
-    name: "HackIndia 2024",
-    position: "1st Place Winner",
-    project: "SecureChat - End-to-End Encrypted Messaging",
-    date: "March 2024",
-    location: "Mumbai, India",
-    participants: "500+",
-    prize: "₹1,00,000",
-    technologies: ["React Native", "Node.js", "WebRTC", "Cryptography"],
-    description: "Built a secure messaging app with end-to-end encryption and self-destructing messages",
-    achievement: "winner",
-  },
+  
   {
     name: "CodeFest 2024",
     position: "2nd Place",
@@ -213,30 +201,7 @@ const hackathons = [
     description: "Created an ML-based system to detect and prevent network intrusions in real-time",
     achievement: "third",
   },
-  {
-    name: "Smart India Hackathon 2023",
-    position: "Finalist",
-    project: "Rural Healthcare Management System",
-    date: "August 2023",
-    location: "Chennai, India",
-    participants: "1000+",
-    prize: "Recognition",
-    technologies: ["React", "Node.js", "MongoDB", "Telemedicine APIs"],
-    description: "Developed a comprehensive healthcare management system for rural areas",
-    achievement: "finalist",
-  },
-  {
-    name: "DevFest Hackathon 2023",
-    position: "Winner - Best UI/UX",
-    project: "EcoTrack - Carbon Footprint Tracker",
-    date: "October 2023",
-    location: "Pune, India",
-    participants: "400+",
-    prize: "₹30,000",
-    technologies: ["Next.js", "Tailwind CSS", "Chart.js", "Firebase"],
-    description: "Created an intuitive app to track and reduce personal carbon footprint",
-    achievement: "special",
-  },
+  
 ]
 
 const getAchievementColor = (achievement: string) => {
@@ -277,9 +242,8 @@ const education = [
   {
     degree: "Bachelor of Technology (B.Tech)",
     field: "Computer Science & Engineering",
-    institution: "XYZ Institute of Technology",
-    year: "2021 - 2025",
-    cgpa: "8.5/10",
+    institution: "University of Engineering and Management Jaipur",
+    year: "2022 - 2026",
     status: "Final Year",
   },
 ]
