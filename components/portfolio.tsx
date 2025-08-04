@@ -51,7 +51,7 @@ export function Portfolio() {
           viewport={{ once: true }}
           className="mt-4 max-w-2xl mx-auto text-lg text-neutral-400"
         >
-          Explore our project categories and discover the work we're passionate about.
+          Explore my project categories and discover the work I'm passionate about.
         </motion.p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

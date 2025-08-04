@@ -53,7 +53,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
         >
-          We craft award-winning digital experiences that blend creativity with cutting-edge technology.
+          I craft digital experiences that blend creativity with cutting-edge technology.
         </motion.p>
         <TransitionLink href="/#portfolio">
           <motion.button
@@ -61,7 +61,7 @@ export function Hero() {
             whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 300 } }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Our Work <ArrowRight size={20} />
+            Explore My Work <ArrowRight size={20} />
           </motion.button>
         </TransitionLink>
       </div>

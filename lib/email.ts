@@ -248,7 +248,7 @@ export async function sendEmail(emailData: EmailData): Promise<boolean> {
 // Send contact form notification
 export async function sendContactNotification(data: ContactEmailData): Promise<boolean> {
   const emailData: EmailData = {
-    to: "admin@yourwebsite.com", // Replace with your email
+    to: "ankits39229@gmail.com", // Replace with your email
     from: "noreply@yourwebsite.com",
     subject: `New Contact: ${data.subject}`,
     html: generateContactEmailHTML(data),

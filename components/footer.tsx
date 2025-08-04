@@ -15,7 +15,7 @@ export function Footer() {
         </TransitionLink>
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-neutral-400">
-            &copy; {new Date().getFullYear()} Innovate. Create. Inspire. All rights reserved.
+            &copy; {new Date().getFullYear()} Ankit Kumar. All rights reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <TransitionLink href="#" className="text-neutral-400 hover:text-white">

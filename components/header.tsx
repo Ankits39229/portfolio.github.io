@@ -23,7 +23,7 @@ export function Header() {
     <motion.header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 p-4 hidden md:block">
       <div className="container mx-auto flex justify-between items-center bg-black/20 backdrop-blur-md p-4 rounded-full">
         <TransitionLink href="/" className="text-white font-bold text-xl">
-          ICI
+          Ankit Kumar
         </TransitionLink>
         <nav className="flex items-center gap-8 text-white">
           <TransitionLink
