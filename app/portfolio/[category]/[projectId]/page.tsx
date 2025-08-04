@@ -7,16 +7,9 @@ import {
   Github,
   ExternalLink,
   Clock,
-  Users,
   Star,
   CheckCircle,
-  AlertCircle,
-  Lightbulb,
   Code,
-  Database,
-  Cloud,
-  Zap,
-  BarChart3,
   Shield,
   Brain,
 } from "lucide-react"
@@ -190,17 +183,12 @@ export default function ProjectDetailPage({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
         >
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
             <Clock className="mx-auto mb-2 text-blue-400" size={24} />
             <div className="text-2xl font-bold mb-1">{project.duration}</div>
             <div className="text-sm text-neutral-400">Duration</div>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
-            <Users className="mx-auto mb-2 text-green-400" size={24} />
-            <div className="text-2xl font-bold mb-1">{project.teamSize}</div>
-            <div className="text-sm text-neutral-400">Team Size</div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
             <Star className="mx-auto mb-2 text-yellow-400" size={24} />
@@ -228,12 +216,6 @@ export default function ProjectDetailPage({
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8">
                 <h3 className="text-xl font-bold mb-4">Description</h3>
                 <p className="text-neutral-300 leading-relaxed mb-6">{project.longDescription}</p>
-                <div className="mb-6">
-                  <h4 className="font-semibold mb-3">My Role</h4>
-                  <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">
-                    {project.myRole}
-                  </span>
-                </div>
               </div>
             </div>
             <div>
@@ -257,41 +239,6 @@ export default function ProjectDetailPage({
                 </div>
               </div>
             </div>
-          </div>
-        </motion.section>
-
-        {/* Screenshots Gallery */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-8">Screenshots</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {project.screenshots.map((screenshot, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                className="relative overflow-hidden rounded-lg cursor-pointer group"
-              >
-                <Image
-                  src={screenshot || "/placeholder.svg"}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  width={400}
-                  height={300}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-medium">View Full Size</span>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </motion.section>
 
@@ -320,214 +267,6 @@ export default function ProjectDetailPage({
             ))}
           </div>
         </motion.section>
-
-        {/* Technical Architecture */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-8">Technical Architecture</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {project.architecture.frontend && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Code className="text-blue-400" size={24} />
-                  <h3 className="text-xl font-bold">Frontend</h3>
-                </div>
-                <ul className="space-y-2">
-                  {project.architecture.frontend.map((tech, index) => (
-                    <li key={index} className="text-neutral-300 flex items-center gap-2">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {project.architecture.backend && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Database className="text-green-400" size={24} />
-                  <h3 className="text-xl font-bold">Backend</h3>
-                </div>
-                <ul className="space-y-2">
-                  {project.architecture.backend.map((tech, index) => (
-                    <li key={index} className="text-neutral-300 flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full" />
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {project.architecture.database && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Database className="text-yellow-400" size={24} />
-                  <h3 className="text-xl font-bold">Database</h3>
-                </div>
-                <ul className="space-y-2">
-                  {project.architecture.database.map((tech, index) => (
-                    <li key={index} className="text-neutral-300 flex items-center gap-2">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full" />
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {project.architecture.deployment && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Cloud className="text-purple-400" size={24} />
-                  <h3 className="text-xl font-bold">Deployment</h3>
-                </div>
-                <ul className="space-y-2">
-                  {project.architecture.deployment.map((tech, index) => (
-                    <li key={index} className="text-neutral-300 flex items-center gap-2">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full" />
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {project.architecture.apis && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Zap className="text-orange-400" size={24} />
-                  <h3 className="text-xl font-bold">APIs & Services</h3>
-                </div>
-                <ul className="space-y-2">
-                  {project.architecture.apis.map((api, index) => (
-                    <li key={index} className="text-neutral-300 flex items-center gap-2">
-                      <div className="w-2 h-2 bg-orange-400 rounded-full" />
-                      {api}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </motion.section>
-
-        {/* Challenges & Solutions */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-8">Challenges & Solutions</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <AlertCircle className="text-red-400" size={24} />
-                <h3 className="text-xl font-bold">Challenges</h3>
-              </div>
-              <ul className="space-y-4">
-                {project.challenges.map((challenge, index) => (
-                  <li key={index} className="text-neutral-300 leading-relaxed">
-                    <span className="text-red-400 font-bold">•</span> {challenge}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Lightbulb className="text-yellow-400" size={24} />
-                <h3 className="text-xl font-bold">Solutions</h3>
-              </div>
-              <ul className="space-y-4">
-                {project.solutions.map((solution, index) => (
-                  <li key={index} className="text-neutral-300 leading-relaxed">
-                    <span className="text-yellow-400 font-bold">•</span> {solution}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Key Learnings */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-8">Key Learnings</h2>
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {project.learnings.map((learning, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-3"
-                >
-                  <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-neutral-300 leading-relaxed">{learning}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Performance Metrics */}
-        {project.metrics && (
-          <motion.section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-8">Performance Metrics</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {project.metrics.performance && (
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <BarChart3 className="mx-auto mb-3 text-green-400" size={32} />
-                  <div className="text-2xl font-bold mb-1">{project.metrics.performance}</div>
-                  <div className="text-sm text-neutral-400">Performance</div>
-                </div>
-              )}
-              {project.metrics.users && (
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <Users className="mx-auto mb-3 text-blue-400" size={32} />
-                  <div className="text-2xl font-bold mb-1">{project.metrics.users}</div>
-                  <div className="text-sm text-neutral-400">Users</div>
-                </div>
-              )}
-              {project.metrics.uptime && (
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <Zap className="mx-auto mb-3 text-yellow-400" size={32} />
-                  <div className="text-2xl font-bold mb-1">{project.metrics.uptime}</div>
-                  <div className="text-sm text-neutral-400">Uptime</div>
-                </div>
-              )}
-              {project.metrics.coverage && (
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <CheckCircle className="mx-auto mb-3 text-purple-400" size={32} />
-                  <div className="text-2xl font-bold mb-1">{project.metrics.coverage}</div>
-                  <div className="text-sm text-neutral-400">Coverage</div>
-                </div>
-              )}
-            </div>
-          </motion.section>
-        )}
 
         {/* Project Navigation */}
         <motion.section

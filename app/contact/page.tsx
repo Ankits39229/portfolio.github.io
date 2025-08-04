@@ -206,7 +206,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email Us</h3>
-                    <p className="text-neutral-400">hello@yourcompany.com</p>
+                    <p className="text-neutral-400">ankits39229@gmail.com</p>
                   </div>
                 </div>
               </motion.div>
@@ -221,7 +221,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Call Us</h3>
-                    <p className="text-neutral-400">+1 (555) 123-4567</p>
+                    <p className="text-neutral-400">+91 7479584773</p>
                   </div>
                 </div>
               </motion.div>
@@ -236,11 +236,11 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Visit Us</h3>
-                    <p className="text-neutral-400">
+                    {/* <p className="text-neutral-400">
                       123 Innovation Street
                       <br />
                       Tech City, TC 12345
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </motion.div>
@@ -274,13 +274,13 @@ export default function ContactPage() {
             >
               <h3 className="font-bold mb-2">Quick Response Guarantee</h3>
               <p className="text-neutral-300 text-sm">
-                We typically respond to all inquiries within 24 hours during business days. For urgent matters, please
-                call us directly.
+                I typically respond to all inquiries within 24 hours during business days. For urgent matters, please
+                call me directly.
               </p>
             </motion.div>
           </motion.div>
         </div>
       </div>
-    </div>
+    </div>  
   )
 }

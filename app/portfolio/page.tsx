@@ -142,12 +142,7 @@ const securityTools = [
   { name: "Metasploit", icon: "💥", description: "Penetration testing framework", category: "Exploitation" },
   { name: "Wireshark", icon: "🦈", description: "Network protocol analyzer", category: "Network Analysis" },
   { name: "OWASP ZAP", icon: "⚡", description: "Web application security scanner", category: "Web Security" },
-  {
-    name: "Sqlmap",
-    icon: "💉",
-    description: "SQL injection detection and exploitation",
-    category: "Database Security",
-  },
+  { name: "Sqlmap", icon: "💉", description: "SQL injection detection and exploitation", category: "Database Security" },
   { name: "John the Ripper", icon: "🔓", description: "Password cracking tool", category: "Password Security" },
   { name: "Hydra", icon: "🐙", description: "Network login cracker", category: "Brute Force" },
   { name: "Nikto", icon: "🔎", description: "Web server scanner", category: "Web Security" },
