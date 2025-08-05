@@ -107,12 +107,6 @@ const technicalSkills = [
     status: "Advanced",
   },
   {
-    name: "MySQL",
-    experience: "1.5+ years",
-    projects: 5,
-    status: "Advanced",
-  },
-  {
     name: "Git/GitHub",
     category: "Tools",
     icon: "🔧",
@@ -184,7 +178,6 @@ const hackathons = [
     date: "January 2024",
     location: "Bangalore, India",
     participants: "300+",
-    prize: "₹50,000",
     technologies: ["Python", "OpenAI API", "Flask", "Docker"],
     description: "Developed an AI tool that automatically reviews code and suggests improvements",
     achievement: "runner-up",
@@ -196,7 +189,6 @@ const hackathons = [
     date: "November 2023",
     location: "Delhi, India",
     participants: "200+",
-    prize: "₹25,000",
     technologies: ["Python", "Scapy", "Machine Learning", "Pandas"],
     description: "Created an ML-based system to detect and prevent network intrusions in real-time",
     achievement: "third",
@@ -317,9 +309,9 @@ export default function PortfolioPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">Portfolio</h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-4">Ankit Kumar</h1>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-8">
-            B.Tech Computer Science Student | Full Stack Developer | Cybersecurity Enthusiast
+            B.Tech Computer Science Student | Web Developer | Cybersecurity Enthusiast | App Developer
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-neutral-400 mb-8">
             <span className="flex items-center gap-2">
@@ -407,7 +399,6 @@ export default function PortfolioPage() {
                     <p className="text-neutral-300">{edu.institution}</p>
                     <div className="flex justify-between text-sm text-neutral-400">
                       <span>{edu.year}</span>
-                      <span>CGPA: {edu.cgpa}</span>
                     </div>
                     <span className="inline-block px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">
                       {edu.status}
@@ -859,7 +850,6 @@ export default function PortfolioPage() {
                         {hackathon.participants} participants
                       </span>
                     </div>
-                    <span className="font-bold text-green-400">{hackathon.prize}</span>
                   </div>
                 </div>
               </motion.div>

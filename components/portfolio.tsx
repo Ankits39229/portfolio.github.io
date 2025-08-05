@@ -19,7 +19,7 @@ const projectCategories = [
     imgSrc: "/images/ethereal-threads.png",
     href: "/portfolio/application-development",
     projectCount: 5,
-    technologies: ["Python", "Flask", "Tkinter", "SQLite"],
+    technologies: ["Java", "Python", "JavaSwing", "Machine Learning"],
   },
   {
     title: "Linux Development",
@@ -42,7 +42,7 @@ export function Portfolio() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold tracking-tight"
         >
-          Our Creations
+          My Creations
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
