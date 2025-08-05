@@ -47,7 +47,7 @@ const getCategoryIcon = (category: string) => {
   switch (category) {
     case "web-development":
       return <Code className="text-blue-400" size={24} />
-    case "cybersecurity":
+    case "application-development":
       return <Shield className="text-red-400" size={24} />
     case "ai-ml":
       return <Brain className="text-purple-400" size={24} />
@@ -60,7 +60,7 @@ const getCategoryColor = (category: string) => {
   switch (category) {
     case "web-development":
       return "text-blue-400"
-    case "cybersecurity":
+    case "application-development":
       return "text-red-400"
     case "ai-ml":
       return "text-purple-400"
@@ -154,7 +154,7 @@ export default function ProjectDetailPage({
                     className={`flex items-center gap-2 font-medium py-3 px-6 rounded-lg transition-colors ${
                       params.category === "web-development"
                         ? "bg-blue-500 hover:bg-blue-600"
-                        : params.category === "cybersecurity"
+                        : params.category === "application-development"
                           ? "bg-red-500 hover:bg-red-600"
                           : "bg-purple-500 hover:bg-purple-600"
                     } text-white`}
@@ -228,7 +228,7 @@ export default function ProjectDetailPage({
                       className={`px-3 py-1 rounded-full text-xs font-medium ${
                         params.category === "web-development"
                           ? "bg-blue-500/20 text-blue-400"
-                          : params.category === "cybersecurity"
+                          : params.category === "application-development"
                             ? "bg-red-500/20 text-red-400"
                             : "bg-purple-500/20 text-purple-400"
                       }`}

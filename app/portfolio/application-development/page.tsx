@@ -32,8 +32,8 @@ const getDifficultyColor = (difficulty: string) => {
   }
 }
 
-export default function CybersecurityPage() {
-  const projects = getCategoryProjects("cybersecurity")
+export default function ApplicationDevelopmentPage() {
+  const projects = getCategoryProjects("application-development")
 
   return (
     <div className="min-h-screen pt-32 pb-20">
@@ -58,7 +58,7 @@ export default function CybersecurityPage() {
             <h1 className="text-5xl md:text-7xl font-bold">Application Development</h1>
           </div>
           <p className="text-xl text-neutral-300 max-w-3xl">
-            Security tools, Utility applications, and vulnerability assessment projects focused on protecting digital assets.
+            Security tools, Utility applications, and development projects focused on creating robust applications.
           </p>
         </motion.div>
 
@@ -75,7 +75,7 @@ export default function CybersecurityPage() {
               Featured Application Development Projects
             </h2>
             <p className="text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-              Advanced security tools, utility applications.
+              Advanced security tools, utility applications, and development projects.
             </p>
           </div>
           
@@ -113,7 +113,7 @@ export default function CybersecurityPage() {
                       <div>
                         <h4 className="font-bold mb-4 text-red-400 flex items-center gap-2">
                           <Shield size={18} />
-                          Security Features
+                          Key Features
                         </h4>
                         <ul className="text-neutral-300 space-y-3">
                           {project.features.slice(0, 4).map((feature, idx) => (
@@ -128,7 +128,7 @@ export default function CybersecurityPage() {
                       <div>
                         <h4 className="font-bold mb-4 text-red-400 flex items-center gap-2">
                           <Clock size={18} />
-                          Security Stack
+                          Tech Stack
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech, idx) => (
@@ -213,8 +213,8 @@ export default function CybersecurityPage() {
             <Shield className="mx-auto text-red-400 mb-4" size={48} />
             <h2 className="text-3xl font-bold mb-4">Application Development</h2>
             <p className="text-neutral-300 max-w-2xl mx-auto">
-              All application development projects are developed for educational purposes and ethical security research. These
-              tools are designed to help organizations identify and fix their systems.
+              All application development projects are designed to showcase development skills and create useful
+              applications. These tools demonstrate various programming techniques and problem-solving approaches.
             </p>
           </div>
         </motion.div>
@@ -229,13 +229,13 @@ export default function CybersecurityPage() {
         >
           <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-red-500/20">
             <div className="text-3xl font-bold text-red-400 mb-2">{projects.length}</div>
-            <div className="text-neutral-300">Security Projects</div>
+            <div className="text-neutral-300">Development Projects</div>
           </div>
           <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-green-500/20">
             <div className="text-3xl font-bold text-green-400 mb-2">
               {projects.filter((p) => p.status === "Completed").length}
             </div>
-            <div className="text-neutral-300">Tools Completed</div>
+            <div className="text-neutral-300">Applications Completed</div>
           </div>
           <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-yellow-500/20">
             <div className="text-3xl font-bold text-yellow-400 mb-2">

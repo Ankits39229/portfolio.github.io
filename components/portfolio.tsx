@@ -14,12 +14,12 @@ const projectCategories = [
     technologies: ["React", "Next.js", "Node.js", "MongoDB"],
   },
   {
-    title: "Cybersecurity Projects",
-    description: "Security tools, penetration testing, and vulnerability assessments",
+    title: "Application Development",
+    description: "Security tools, utility applications, and development projects",
     imgSrc: "/images/ethereal-threads.png",
-    href: "/portfolio/cybersecurity",
+    href: "/portfolio/application-development",
     projectCount: 5,
-    technologies: ["Python", "Nmap", "Burp Suite", "Metasploit"],
+    technologies: ["Python", "Flask", "Tkinter", "SQLite"],
   },
   {
     title: "AI & Machine Learning",

@@ -384,7 +384,7 @@ export default function PortfolioPage() {
                 develop more robust and secure applications.
               </p>
               <p className="text-lg text-neutral-300 leading-relaxed">
-                I'm actively seeking internship opportunities in software development, cybersecurity, or DevSecOps roles
+                I'm actively seeking internship opportunities in software development or cybersecurity roles
                 where I can contribute to meaningful projects while learning from experienced professionals.
               </p>
             </motion.div>
@@ -913,7 +913,7 @@ export default function PortfolioPage() {
         >
           <h2 className="text-3xl font-bold mb-4">Ready to Start My Career Journey</h2>
           <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
-            I'm actively seeking internship opportunities in software development, cybersecurity, or DevSecOps roles
+            I'm actively seeking internship opportunities in software development or cybersecurity roles
             where I can contribute to innovative projects while learning from experienced professionals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -933,14 +933,14 @@ export default function PortfolioPage() {
               className="flex items-center gap-2 text-neutral-300 hover:text-white transition-colors"
             >
               <Mail size={20} />
-              your.email@example.com
+              ankits39229@gmail.com
             </a>
             <a
               href="tel:+1234567890"
               className="flex items-center gap-2 text-neutral-300 hover:text-white transition-colors"
             >
               <Phone size={20} />
-              +91 12345 67890
+              +91 7479584773
             </a>
           </div>
         </motion.div>

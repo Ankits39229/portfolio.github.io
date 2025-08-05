@@ -33,7 +33,7 @@ export function MobileHeader() {
     { href: "/#portfolio", label: "Work", icon: Code },
     { href: "/portfolio", label: "Portfolio", icon: User },
     { href: "/portfolio/web-development", label: "Web Development", icon: Code },
-    { href: "/portfolio/cybersecurity", label: "Cybersecurity", icon: Shield },
+    { href: "/portfolio/application-development", label: "Application Development", icon: Shield },
     { href: "/portfolio/ai-ml", label: "AI & ML", icon: Brain },
     { href: "/contact", label: "Contact", icon: Mail },
   ]
