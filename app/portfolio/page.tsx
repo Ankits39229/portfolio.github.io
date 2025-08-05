@@ -443,70 +443,72 @@ export default function PortfolioPage() {
             {technicalSkills.map((skill, index) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.05, duration: 0.5 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  scale: 1.05,
-                  rotateY: 5,
+                  scale: 1.02,
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
                   transition: { type: "spring", stiffness: 300 },
                 }}
-                className={`bg-gradient-to-br ${getStatusColor(skill.status)} backdrop-blur-sm rounded-xl p-6 border hover:shadow-lg hover:shadow-white/10 transition-all duration-300 group cursor-pointer`}
+                className="bg-white/5 backdrop-blur-sm rounded-lg p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer relative overflow-hidden"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-3xl group-hover:scale-110 transition-transform">{skill.icon}</span>
-                  <div className="flex items-center gap-1">
-                    {getStatusIcon(skill.status)}
-                    <span className="text-xs font-medium opacity-80">{skill.status}</span>
+                <motion.div
+                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background: "linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.2), transparent)",
+                    padding: "1px",
+                  }}
+                />
+
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    <motion.span
+                      className="text-3xl group-hover:scale-110 transition-transform"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {skill.icon}
+                    </motion.span>
+                    <motion.span
+                      className={`px-2 py-1 rounded-full text-xs ${
+                        skill.status === "Expert"
+                          ? "bg-yellow-500/20 text-yellow-400"
+                          : skill.status === "Advanced"
+                            ? "bg-blue-500/20 text-blue-400"
+                            : "bg-green-500/20 text-green-400"
+                      }`}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      {skill.status}
+                    </motion.span>
                   </div>
-                </div>
 
-                <h3 className="font-bold text-lg mb-2 group-hover:text-white transition-colors">{skill.name}</h3>
+                  <h3 className="font-bold text-lg mb-2 group-hover:text-white transition-colors">{skill.name}</h3>
 
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-400">Experience:</span>
-                    <span className="font-medium">{skill.experience}</span>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between items-center">
+                      <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors">Experience:</span>
+                      <span className="font-medium">{skill.experience}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors">Projects:</span>
+                      <span className="font-medium">{skill.projects}</span>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-400">Projects:</span>
-                    <span className="font-medium">{skill.projects}</span>
-                  </div>
-                </div>
 
-                <div className="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full bg-gradient-to-r from-white/50 to-white/80 rounded-full"
-                    initial={{ width: "0%" }}
-                    whileInView={{
-                      width: skill.status === "Expert" ? "100%" : skill.status === "Advanced" ? "80%" : "60%",
-                    }}
-                    transition={{ delay: index * 0.1, duration: 1, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                  />
-                </div>
-
-                <div className="absolute inset-0 pointer-events-none">
-                  {[...Array(3)].map((_, i) => (
+                  <div className="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <motion.div
-                      key={i}
-                      className="absolute w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100"
-                      style={{
-                        left: `${20 + i * 30}%`,
-                        top: `${20 + i * 20}%`,
+                      className="h-full bg-gradient-to-r from-white/50 to-white/80 rounded-full"
+                      initial={{ width: "0%" }}
+                      whileInView={{
+                        width: skill.status === "Expert" ? "100%" : skill.status === "Advanced" ? "80%" : "60%",
                       }}
-                      animate={{
-                        y: [0, -10, 0],
-                        opacity: [0, 1, 0],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Number.POSITIVE_INFINITY,
-                        delay: i * 0.3,
-                      }}
+                      transition={{ delay: index * 0.1, duration: 1, ease: "easeOut" }}
+                      viewport={{ once: true }}
                     />
-                  ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -534,33 +536,30 @@ export default function PortfolioPage() {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  scale: 1.05,
-                  rotateX: 5,
+                  scale: 1.02,
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
                   transition: { type: "spring", stiffness: 300 },
                 }}
-                className={`bg-gradient-to-br ${getStatusColor(ide.proficiency)} backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-white/10 transition-all duration-300 group cursor-pointer relative overflow-hidden`}
+                className="bg-white/5 backdrop-blur-sm rounded-lg p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer relative overflow-hidden"
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  animate={{
-                    background: [
-                      "linear-gradient(45deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.1))",
-                      "linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(34, 197, 94, 0.1))",
-                    ],
+                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background: "linear-gradient(45deg, transparent, rgba(34, 197, 94, 0.2), transparent)",
+                    padding: "1px",
                   }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
                 />
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-3">
                     <motion.span
                       className="text-3xl group-hover:scale-110 transition-transform"
-                      whileHover={{ rotate: [0, -10, 10, 0] }}
+                      whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
                     >
                       {ide.icon}
                     </motion.span>
-                    <span
+                    <motion.span
                       className={`px-2 py-1 rounded-full text-xs ${
                         ide.proficiency === "Expert"
                           ? "bg-yellow-500/20 text-yellow-400"
@@ -568,9 +567,10 @@ export default function PortfolioPage() {
                             ? "bg-blue-500/20 text-blue-400"
                             : "bg-green-500/20 text-green-400"
                       }`}
+                      whileHover={{ scale: 1.1 }}
                     >
                       {ide.proficiency}
-                    </span>
+                    </motion.span>
                   </div>
                   <h3 className="font-bold text-lg mb-2 group-hover:text-white transition-colors">{ide.name}</h3>
                   <p className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">
@@ -598,21 +598,21 @@ export default function PortfolioPage() {
             {securityTools.map((tool, index) => (
               <motion.div
                 key={tool.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.05, duration: 0.5 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{
                   scale: 1.02,
                   boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
                   transition: { type: "spring", stiffness: 300 },
                 }}
-                className={`bg-gradient-to-br ${getCategoryColor(tool.category)} backdrop-blur-sm rounded-lg p-6 border hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 group cursor-pointer relative overflow-hidden`}
+                className="bg-white/5 backdrop-blur-sm rounded-lg p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer relative overflow-hidden"
               >
                 <motion.div
                   className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
-                    background: "linear-gradient(45deg, transparent, rgba(239, 68, 68, 0.1), transparent)",
+                    background: "linear-gradient(45deg, transparent, rgba(239, 68, 68, 0.2), transparent)",
                     padding: "1px",
                   }}
                 />
@@ -629,9 +629,12 @@ export default function PortfolioPage() {
                       </motion.span>
                       <h3 className="font-bold group-hover:text-white transition-colors">{tool.name}</h3>
                     </div>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 rounded-full text-xs font-medium">
+                    <motion.span
+                      className="px-2 py-1 bg-red-500/20 text-red-400 rounded-full text-xs font-medium"
+                      whileHover={{ scale: 1.1 }}
+                    >
                       {tool.category}
-                    </span>
+                    </motion.span>
                   </div>
                   <p className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">
                     {tool.description}
@@ -658,40 +661,40 @@ export default function PortfolioPage() {
             {developmentTools.map((tool, index) => (
               <motion.div
                 key={tool.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.05, duration: 0.5 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  scale: 1.05,
-                  rotateX: 5,
+                  scale: 1.02,
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
                   transition: { type: "spring", stiffness: 300 },
                 }}
-                className={`bg-gradient-to-br ${getCategoryColor(tool.category)} backdrop-blur-sm rounded-lg p-6 border text-center hover:shadow-lg hover:shadow-white/10 transition-all duration-300 group cursor-pointer relative overflow-hidden`}
+                className="bg-white/5 backdrop-blur-sm rounded-lg p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer relative overflow-hidden text-center"
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  animate={{
-                    background: [
-                      "linear-gradient(45deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1))",
-                      "linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1))",
-                    ],
+                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background: "linear-gradient(45deg, transparent, rgba(168, 85, 247, 0.2), transparent)",
+                    padding: "1px",
                   }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
                 />
 
                 <div className="relative z-10">
                   <motion.div
                     className="text-4xl mb-3 group-hover:scale-110 transition-transform"
-                    whileHover={{ rotate: [0, -10, 10, 0] }}
+                    whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
                     {tool.icon}
                   </motion.div>
                   <h3 className="font-bold mb-2 group-hover:text-white transition-colors">{tool.name}</h3>
-                  <span className="inline-block px-2 py-1 bg-white/10 rounded-full text-xs text-neutral-400 mb-2">
+                  <motion.span
+                    className="inline-block px-2 py-1 bg-white/10 rounded-full text-xs text-neutral-400 mb-2"
+                    whileHover={{ scale: 1.1 }}
+                  >
                     {tool.category}
-                  </span>
+                  </motion.span>
                   <p className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">
                     {tool.description}
                   </p>
@@ -786,8 +789,8 @@ export default function PortfolioPage() {
             {hackathons.map((hackathon, index) => (
               <motion.div
                 key={hackathon.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{
@@ -795,12 +798,12 @@ export default function PortfolioPage() {
                   boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
                   transition: { type: "spring", stiffness: 300 },
                 }}
-                className={`bg-gradient-to-br ${getAchievementColor(hackathon.achievement)} backdrop-blur-sm rounded-xl p-6 border hover:shadow-lg hover:shadow-yellow-500/10 transition-all duration-300 group cursor-pointer relative overflow-hidden`}
+                className="bg-white/5 backdrop-blur-sm rounded-lg p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer relative overflow-hidden"
               >
                 <motion.div
-                  className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
-                    background: "linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent)",
+                    background: "linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.2), transparent)",
                     padding: "1px",
                   }}
                 />
@@ -810,14 +813,14 @@ export default function PortfolioPage() {
                     <div className="flex items-center gap-3">
                       <motion.span
                         className="text-3xl group-hover:scale-110 transition-transform"
-                        whileHover={{ rotate: [0, -10, 10, 0] }}
+                        whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.5 }}
                       >
                         {getAchievementIcon(hackathon.achievement)}
                       </motion.span>
                       <div>
                         <h3 className="font-bold text-lg group-hover:text-white transition-colors">{hackathon.name}</h3>
-                        <p className="text-sm text-neutral-400">
+                        <p className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">
                           {hackathon.date} • {hackathon.location}
                         </p>
                       </div>
@@ -832,7 +835,7 @@ export default function PortfolioPage() {
 
                   <div className="mb-4">
                     <h4 className="font-semibold text-white mb-2">{hackathon.project}</h4>
-                    <p className="text-sm text-neutral-400 leading-relaxed">{hackathon.description}</p>
+                    <p className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors leading-relaxed">{hackathon.description}</p>
                   </div>
 
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -845,7 +848,7 @@ export default function PortfolioPage() {
 
                   <div className="flex justify-between items-center text-sm">
                     <div className="flex items-center gap-4">
-                      <span className="text-neutral-400">
+                      <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors">
                         <Users size={14} className="inline mr-1" />
                         {hackathon.participants} participants
                       </span>
