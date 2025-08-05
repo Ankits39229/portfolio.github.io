@@ -92,7 +92,7 @@ export const projectsData: Record<string, Project[]> = {
       description: "Advanced Windows Security Application for system protection",
       longDescription:
         "An advanced Windows security application designed to enhance system protection through real-time monitoring, threat detection, and automated response mechanisms. This application utilizes Java Swing for a robust GUI and integrates with system-level APIs for comprehensive security management.",
-      technologies: ["Java", "Java Swing", "Python", "Batch", "Machine Learning", "Blockchain"],
+      technologies: ["Java", "Java Swing", "Python", "Batch", "Machine Learning", "Blockchain", "Tkinter" ],
       features: [
         "Automates junk‐file (temp, prefetch) removal",
         "Unified diagnostics (network, audio, Bluetooth, etc.)",
