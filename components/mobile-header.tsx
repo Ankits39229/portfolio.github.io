@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { TransitionLink } from "./transition-link"
-import { Menu, X, Code, Shield, Brain, User, Mail } from "lucide-react"
+import { Menu, X, Code, Shield, Terminal, User, Mail } from "lucide-react"
 import { usePathname } from "next/navigation"
 
 export function MobileHeader() {
@@ -34,7 +34,7 @@ export function MobileHeader() {
     { href: "/portfolio", label: "Portfolio", icon: User },
     { href: "/portfolio/web-development", label: "Web Development", icon: Code },
     { href: "/portfolio/application-development", label: "Application Development", icon: Shield },
-    { href: "/portfolio/ai-ml", label: "AI & ML", icon: Brain },
+    { href: "/portfolio/linux-development", label: "Linux Development", icon: Terminal },
     { href: "/contact", label: "Contact", icon: Mail },
   ]
 

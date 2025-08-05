@@ -49,7 +49,7 @@ const getCategoryIcon = (category: string) => {
       return <Code className="text-blue-400" size={24} />
     case "application-development":
       return <Shield className="text-red-400" size={24} />
-    case "ai-ml":
+    case "linux-development":
       return <Brain className="text-purple-400" size={24} />
     default:
       return <Star className="text-gray-400" size={24} />
@@ -62,7 +62,7 @@ const getCategoryColor = (category: string) => {
       return "text-blue-400"
     case "application-development":
       return "text-red-400"
-    case "ai-ml":
+    case "linux-development":
       return "text-purple-400"
     default:
       return "text-gray-400"

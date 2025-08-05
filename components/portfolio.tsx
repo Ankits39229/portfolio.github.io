@@ -22,12 +22,12 @@ const projectCategories = [
     technologies: ["Python", "Flask", "Tkinter", "SQLite"],
   },
   {
-    title: "AI & Machine Learning",
-    description: "Intelligent systems, data analysis, and automation projects",
+    title: "Linux Development",
+    description: "System tools, automation scripts, and Linux applications",
     imgSrc: "/images/quantum-leap.png",
-    href: "/portfolio/ai-ml",
+    href: "/portfolio/linux-development",
     projectCount: 4,
-    technologies: ["Python", "TensorFlow", "OpenAI API", "Pandas"],
+    technologies: ["Python", "Bash", "Linux", "CLI"],
   },
 ]
 

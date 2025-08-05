@@ -12,9 +12,8 @@ import { MobileHeader } from "@/components/mobile-header"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Innovate. Create. Inspire.",
-  description: "Awwwards-inspired site using Next.js, GSAP, and Three.js",
-    generator: 'v0.dev'
+  title: "Ankit Kumar",
+  description: "Portfolio of Ankit Kumar - Web and Application Developer & Cybersecurity Enthusiast",
 }
 
 export default function RootLayout({
