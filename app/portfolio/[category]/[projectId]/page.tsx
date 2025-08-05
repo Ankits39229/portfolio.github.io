@@ -262,7 +262,7 @@ export default function ProjectDetailPage({
                 className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-lg p-4"
               >
                 <CheckCircle className="text-green-400 flex-shrink-0" size={20} />
-                <span className="text-neutral-300">{feature}</span>
+                <span className="text-neutral-300">{feature.replace(/^•\s*/, '')}</span>
               </motion.div>
             ))}
           </div>

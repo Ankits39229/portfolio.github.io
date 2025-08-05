@@ -113,7 +113,7 @@ export default function WebDevelopmentPage() {
                           Key Features
                         </h4>
                         <ul className="text-neutral-300 space-y-3">
-                          {project.features.slice(0, 4).map((feature, idx) => (
+                          {project.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-3 group/item">
                               <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
                               <span className="group-hover/item:text-white transition-colors duration-300">{feature}</span>
