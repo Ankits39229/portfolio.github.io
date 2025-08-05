@@ -855,42 +855,6 @@ export default function PortfolioPage() {
               </motion.div>
             ))}
           </div>
-
-          {/* Hackathon Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6"
-          >
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
-              <div className="text-3xl mb-2">🏆</div>
-              <div className="text-2xl font-bold text-yellow-400 mb-1">
-                {hackathons.filter((h) => h.achievement === "winner" || h.achievement === "special").length}
-              </div>
-              <div className="text-sm text-neutral-400">Wins</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
-              <div className="text-3xl mb-2">🥈</div>
-              <div className="text-2xl font-bold text-gray-400 mb-1">
-                {hackathons.filter((h) => h.achievement === "runner-up").length}
-              </div>
-              <div className="text-sm text-neutral-400">Runner-ups</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
-              <div className="text-3xl mb-2">🎯</div>
-              <div className="text-2xl font-bold text-blue-400 mb-1">
-                {hackathons.filter((h) => h.achievement === "finalist").length}
-              </div>
-              <div className="text-sm text-neutral-400">Finalist</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center">
-              <div className="text-3xl mb-2">💰</div>
-              <div className="text-2xl font-bold text-green-400 mb-1">₹2.05L</div>
-              <div className="text-sm text-neutral-400">Total Prize</div>
-            </div>
-          </motion.div>
         </motion.section>
 
         {/* Contact CTA */}
