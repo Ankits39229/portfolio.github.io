@@ -303,12 +303,7 @@ export default function PortfolioPage() {
     <div className="min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-4">
         {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
+        <div className="text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">Ankit Kumar</h1>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-8">
             B.Tech Computer Science Student | Web Developer | Cybersecurity Enthusiast | App Developer
@@ -344,7 +339,7 @@ export default function PortfolioPage() {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* About Section */}
         <motion.section
